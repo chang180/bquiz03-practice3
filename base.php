@@ -54,7 +54,8 @@ class DB
     }
     public function q($sql)
     {
-        return $this->pdo->exec($sql)->fetchAll();
+        // echo $sql;
+        return $this->pdo->query($sql)->fetchAll();
     }
     public function save($arg)
     {
@@ -70,7 +71,23 @@ function to($url)
     header("location:$url");
 }
 
-$Movie=new DB('movie');
-$Ord=new DB('ord');
-$Poster=new DB('poster');
-$Admin=new DB('admin');
+$Movie = new DB('movie');
+$Ord = new DB('ord');
+$Poster = new DB('poster');
+$Admin = new DB('admin');
+
+if (empty($_SESSION['ani'])) $_SESSION['ani'] = 1;
+$level = [
+    "1" => "普遍級",
+    "2" => "保護級",
+    "3" => "輔導級",
+    "4" => "限制級"
+];
+
+$sess = [
+    "1" => "14:00~16:00",
+    "2" => "16:00~18:00",
+    "3" => "18:00~20:00",
+    "4" => "20:00~22:00",
+    "5" => "22:00~24:00"
+];
