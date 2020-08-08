@@ -3,7 +3,7 @@
     快速刪除：<input type="radio" name="mode" value="1">依日期<input type="text" name="date"><input type="radio" name="mode" value="2">
     依電影<select name="name">
         <?php
-    $movies=$Movie->all();
+    $movies=$Movie->all([]);
     foreach($movies as $m){
         echo "<option value='".$m['name']."'>".$m['name']."</option>";
     }
@@ -22,7 +22,7 @@
         <td>操作</td>
     </tr>
     <?php
-$orders=$Ord->all();
+$orders=$Ord->all([]," ORDER BY no DESC");
 foreach($orders as $o){
     ?>
     <tr>
