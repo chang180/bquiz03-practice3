@@ -22,6 +22,7 @@ class DB
             $sql .= " WHERE " . implode(" && ", $tmp);
         }
         $sql .= $arg[1] ?? "";
+        // echo $sql;
         return $this->pdo->query($sql)->fetchAll();
     }
     public function count(...$arg)
@@ -41,6 +42,7 @@ class DB
             foreach ($arg as $k => $v) $tmp[] = "`$k`='$v'";
             $sql .= " WHERE " . implode(" && ", $tmp);
         } else $sql .= " WHERE `id`='$arg'";
+        // echo $sql;
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
     public function del($arg)
