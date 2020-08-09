@@ -8,4 +8,4 @@ $ord=$Ord->find(['no'=>$_GET['no']])
 座位：<br>
 <?php foreach(unserialize($ord['seat']) as $s) echo $s,"," ;?><br>
 共<?=$ord['qt'];?>張電影票;
-<div class="ct"><button>確認</button></div>
+<div class="ct"><button onclick="location.href='index.php'">確認</button></div>

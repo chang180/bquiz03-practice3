@@ -101,7 +101,8 @@
 
         function getsession() {
             $.get("api/getsess.php", {
-                "date": $(".date option:selected").val()
+                "date": $(".date option:selected").val(),
+                "movie": $("#movie option:selected").text(),
             }, function(res) {
                 $(".sess").html(res);
             })

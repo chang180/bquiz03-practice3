@@ -1,5 +1,6 @@
 <?php
 include_once "../base.php";
+// var_dump($_GET);
 $orders=$Ord->all($_GET);
 $seat=[];
 foreach ($orders as $o){
